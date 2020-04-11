@@ -1,3 +1,15 @@
+@import 'styles/starter-page/App.css';
+@import 'styles/starter-page/TopBar.css';
+@import 'styles/starter-page/Main-Entry.css';
+@import 'styles/starter-page/About-us-main.css';
+@import 'styles/resident-page-one/ResidentApp.css';
+@import 'styles/resident-page-one/zipcode.css';
+@import 'styles/resident-page-one/Resident-Entry.css';
+@import 'styles/Drop-off/Drop-off-App.css';
+@import 'styles/NGO-Login/NGO-Login-App.css';
+@import 'styles/Pick-up-item-list/ItemsApp.css';
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

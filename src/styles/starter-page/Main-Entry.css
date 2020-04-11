@@ -1,0 +1,26 @@
+.starter-main-body{
+    margin-top: 140px;
+    height:330px;
+    margin-bottom: 70px;
+}
+
+.starter-resident-button {
+    background-color: dodgerblue;
+    height: 50px;
+    width: 150px;
+    margin-left: 130px;
+    font-weight: bold;
+    color: crimson !important;
+    cursor: pointer;
+}
+
+.starter-ngo-button{
+    float: right;
+    height: 50px;
+    width: 150px;
+    margin-right: 130px;
+    font-weight: bold;
+    color: crimson !important;
+    cursor: pointer;
+
+}

@@ -1,0 +1,38 @@
+.starter-about-main{
+    background-color: white;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    box-shadow: -1px 0 5px 0 #1D428A;
+    position: sticky;
+    flex-direction: column;
+    bottom: 0%;
+}
+
+.starter-about-line-one{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: #1D428A;
+}
+
+.starter-about-line-two{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: #1D428A;
+}
+
+.starter-about-email{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: #1D428A;
+}
+
+.starter-about-phone{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: #1D428A;
+}

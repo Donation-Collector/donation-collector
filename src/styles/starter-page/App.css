@@ -1,0 +1,12 @@
+
+.App {
+  text-align: center;
+}
+
+.app-background{
+  background-image: url("../../assets/images/journee_action_don_organes_ng_image_full.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
