@@ -5,10 +5,8 @@
 @import 'styles/resident-page-one/ResidentApp.css';
 @import 'styles/resident-page-one/zipcode.css';
 @import 'styles/resident-page-one/Resident-Entry.css';
-@import 'styles/Drop-off/Drop-off-App.css';
-@import 'styles/Drop-off/TopBar.css';
 @import 'styles/Drop-off/Body.css';
-@import 'styles/Drop-off/tail.css';
+@import 'styles/Drop-off/Drop-off-App.css';
 @import 'styles/NGO-Login/NGO-Login-App.css';
 @import 'styles/Pick-up-item-list/ItemsApp.css';
 
