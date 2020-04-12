@@ -1,0 +1,36 @@
+.div1 {
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    background-color: gray;
+}
+
+.table1 {
+    text-align: center;
+    font-family: "Courier New";
+    font-size: 15pt;
+    color: white;
+    width: 100%;
+    margin-right: 10px;
+    margin-right: 10px;
+}
+
+
+.div2 {
+    height: 400px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.table2 {
+    text-align: center;
+    font-family: "Courier New";
+    font-size: 12pt;
+    width: 100%;
+    color: black;
+    border-spacing: 0px;
+    cellpadding: 10px;
+}

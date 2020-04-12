@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
+import TopBar from "./TopBar";
+import Body from "./Body";
+import Tail from "./Tail";
 
 class DropOffApp extends Component {
     render() {
         return (
             <div>
-                drop-off here!
+                <TopBar />
+                <Body />
+                <Tail />
             </div>
         );
     }
