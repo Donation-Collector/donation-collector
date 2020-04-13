@@ -7,6 +7,7 @@ import { Router, Route , browserHistory} from 'react-router';
 import ResidentApp from './components/resident-page-one/ResidentApp';
 import NgoLoginApp from "./components/NGO-Login/NGO-Login-App";
 import DropOffApp from "./components/Drop-off/Drop-off-App";
+import NgoRegisterApp from "./components/NGO-Register/NGO-Register-App";
 import ItemsApp from "./components/Pick-up-item-list/ItemsApp";
 
 ReactDOM.render(
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path="/" component={App}/>
         <Route path="/resident" component={ResidentApp} />
         <Route path="/nlogin" component={NgoLoginApp}/>
+        <Route path="/nregister" component={NgoRegisterApp}/>
         <Route path="/resident/drop" component={DropOffApp}/>
         <Route path="/resident/items" component={ItemsApp}/>
     </Router>),

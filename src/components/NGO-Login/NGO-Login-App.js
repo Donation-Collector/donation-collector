@@ -5,6 +5,7 @@ class NgoLoginApp extends Component {
         return (
             <div>
                 This is NGO login page!
+                <a href="/nregister">NGO Register</a>
             </div>
         );
     }
