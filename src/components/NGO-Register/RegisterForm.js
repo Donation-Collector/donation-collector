@@ -3,41 +3,62 @@ import React, {Component} from 'react';
 class RegisterForm extends Component {
     render() {
         return (
-            <form>
-                <div className="title">
-                    Register Form
-                </div>
-                <div className="form">
-                    <div>
-                        <span>Name</span>
+            <div>
+                <form>
+                    <div className="title">
+                        Register Form
                     </div>
-                    <input type="text"/>
-                </div>
-                <div className="form">
-                    <div>
-                        <span>Password</span>
+                    <div className="form">
+                        <div className="Box_title">
+                            <span>Image_Url</span>
+                        </div>
+                        <input type="text" className="input"/>
                     </div>
-                    <input type="text"/>
-                </div>
-                <div className="form">
-                    <div>
-                        <span>Phone</span>
+                    <div className="form">
+                        <div className="Box_title">
+                            <span>Name</span>
+                        </div>
+                        <input type="text" className="input"/>
                     </div>
-                    <input type="text"/>
-                </div>
-                <div className="form">
-                    <div>
-                        <span>Email</span>
+                    <div className="form">
+                        <div className="Box_title">
+                            <span>Password</span>
+                        </div>
+                        <input type="text" className="input"/>
+                    </div >
+                    <div className="form">
+                        <div className="Box_title">
+                            <span>Phone</span>
+                        </div>
+                        <input type="text" className="input"/>
                     </div>
-                    <input type="text"/>
-                </div>
-                <div className="form">
-                    <div>
-                        <span>Address</span>
+                    <div className="form">
+                        <div className="Box_title">
+                            <span>Email</span>
+                        </div>
+                        <input type="text" className="input"/>
                     </div>
-                    <input type="text"/>
+                    <div className="form">
+                        <div className="Box_title">
+                            <span>Cover Area</span>
+                        </div>
+                        <input type="text" className="input"/>
+                    </div>
+                    <div className="form">
+                        <div className="Box_title">
+                            <span>Description</span>
+                        </div>
+                        <textarea className="description"></textarea>
+                    </div>
+                </form>
+                <div className="submit-button-body">
+                    <a href="/naddress" type="button" className="submit-button btn btn-secondary">Next</a>
                 </div>
-            </form>
+                <div className="to-login-body">
+                    <a href="/nlogin" className="to-login-link">Already exist an account? Login Here!</a>
+                </div>
+
+            </div>
         );
     }
 }
