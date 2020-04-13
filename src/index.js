@@ -9,7 +9,7 @@ import NgoLoginApp from "./components/NGO-Login/NGO-Login-App";
 import DropOffApp from "./components/Drop-off/Drop-off-App";
 import NgoRegisterApp from "./components/NGO-Register/NGO-Register-App";
 import ItemsApp from "./components/Pick-up-item-list/ItemsApp";
-
+import NgoMainApp from "./components/NGO-main/NGO-Main-App";
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
@@ -21,6 +21,7 @@ ReactDOM.render(
         <Route path="/nregister" component={NgoRegisterApp}/>
         <Route path="/resident/drop" component={DropOffApp}/>
         <Route path="/resident/items" component={ItemsApp}/>
+        <Route path="ngomain" component={NgoMainApp}/>
     </Router>),
   document.getElementById('root')
 );

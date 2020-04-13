@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
+import LoginForm from "./LoginForm"
+import TopBar from "../starter-page/TopBar"
+import AboutUsMain from "../starter-page/About-us-main";
 
 class NgoLoginApp extends Component {
     render() {
         return (
             <div>
-                This is NGO login page!
-                <a href="/nregister">NGO Register</a>
+                <TopBar/>
+                <LoginForm/>
+                <AboutUsMain/>
             </div>
         );
     }
