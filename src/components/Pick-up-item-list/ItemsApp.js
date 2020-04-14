@@ -73,12 +73,10 @@ class ItemsApp extends Component {
                 }
 
 
-                <a href="/n" className="btn btn-secondary starter-ngo-button">Submit Donation</a>
-
+                <a href="/resident/address" className="btn btn-secondary to-address-btn">Next</a>
+                <br/>
                 <AboutUsMain/>
             </div>
-
-
         )
     }
 }

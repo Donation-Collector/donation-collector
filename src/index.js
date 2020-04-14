@@ -11,6 +11,8 @@ import NgoRegisterApp from "./components/NGO-Register/NGO-Register-App";
 import ItemsApp from "./components/Pick-up-item-list/ItemsApp";
 import NgoMainApp from "./components/NGO-main/NGO-Main-App";
 import NgoAddress from "./components/NGO-Register/NGO-Address";
+import ResidentAddressApp from "./components/Resident-Address/Resident-Address-App";
+
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
@@ -24,6 +26,7 @@ ReactDOM.render(
         <Route path="/resident/drop" component={DropOffApp}/>
         <Route path="/resident/items" component={ItemsApp}/>
         <Route path="ngomain" component={NgoMainApp}/>
+        <Route path="/resident/address" component={ResidentAddressApp}/>
     </Router>),
   document.getElementById('root')
 );
