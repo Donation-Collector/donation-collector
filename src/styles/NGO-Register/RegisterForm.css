@@ -2,3 +2,38 @@
     font-size: 14pt;
     background-color: beige;
 }
+
+.Box_title {
+    text-align: left;
+}
+
+.form {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.input {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.description {
+    width: 200px;
+}
+
+.submit-button-body {
+    text-align: center;
+}
+
+.submit-button {
+    width: 100px;
+}
+
+.to-login-body {
+    text-align: center;
+}
+
+.to-login-link {
+
+}
+

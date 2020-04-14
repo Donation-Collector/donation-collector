@@ -10,6 +10,7 @@ import DropOffApp from "./components/Drop-off/Drop-off-App";
 import NgoRegisterApp from "./components/NGO-Register/NGO-Register-App";
 import ItemsApp from "./components/Pick-up-item-list/ItemsApp";
 import NgoMainApp from "./components/NGO-main/NGO-Main-App";
+import NgoAddress from "./components/NGO-Register/NGO-Address";
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Route path="/resident" component={ResidentApp} />
         <Route path="/nlogin" component={NgoLoginApp}/>
         <Route path="/nregister" component={NgoRegisterApp}/>
+        <Route path="/naddress" component={NgoAddress}/>
         <Route path="/resident/drop" component={DropOffApp}/>
         <Route path="/resident/items" component={ItemsApp}/>
         <Route path="ngomain" component={NgoMainApp}/>
