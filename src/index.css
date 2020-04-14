@@ -13,6 +13,7 @@
 @import 'styles/Pick-up-item-list/ItemsApp.css';
 @import 'styles/NGO-Login/LoginForm.css';
 @import 'styles/NGO-main/NGO-Main-App.css';
+@import 'styles/NGO-main/Ngo-main-body.css';
 
 body {
   margin: 0;
