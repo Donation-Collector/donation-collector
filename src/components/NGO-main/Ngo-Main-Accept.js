@@ -48,9 +48,9 @@ class TodoBD extends React.Component {
                         if(type === 3) return !item.done;
                     }).map(item => {
                         return <TodoItem
-                                         key={item.id}
-                                         data={item}
-                                         updateHelper={this.props.updateItem}
+                            key={item.id}
+                            data={item}
+                            updateHelper={this.props.updateItem}
 
                         />
                     })
@@ -72,13 +72,13 @@ class TodoFT extends React.Component {
                 <button onClick={() => { this.props.changeType(1) }}
                         className={this.props.type === 1 ? 'active' : null}
                 >
-                    Pending Requests ({ list.length })
+                    Accepted Requests ({ list.length })
                 </button>
 
                 <button onClick={() => { this.props.changeType(2) }}
                         className={this.props.type === 2 ? 'active' : null}
                 >
-                    Accepted Requests ({ list.filter(item => item.done).length })
+                    Finished Requests ({ list.filter(item => item.done).length })
                 </button>
 
             </div>
@@ -86,7 +86,7 @@ class TodoFT extends React.Component {
     }
 }
 
-class NgoMainApp extends React.Component {
+class NgoMainAccept extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -110,6 +110,7 @@ class NgoMainApp extends React.Component {
                 <section className="ngo-main-body">
                     <aside className="main-nav-body">
                         <nav className="main-nav">
+
                             <a href="/nMainBody" className="main-nav-btn active">
                                 Pending Requests
                             </a>
@@ -134,19 +135,18 @@ class NgoMainApp extends React.Component {
                                         changeType={this.changeType.bind(this)}
                                         type={this.state.type}
                                 />
-                                <div className= "NGO-submit"><button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"
-                                                                     autocomplete="off">
-                                    Submit
-                                </button></div>
+
                             </div>
 
                         </li>
                     </ul>
-
                 </section>
 
 
-
+                <div className= "NGO-submit"><button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"
+                                                     autocomplete="off">
+                    Submit
+                </button></div>
                 <AboutUsMain/>
             </div>
         )
@@ -168,10 +168,10 @@ class NgoMainApp extends React.Component {
 }
 
 ReactDOM.render(
-    <NgoMainApp/>,
+    <NgoMainAccept/>,
     document.getElementById('root')
 );
 
 
-export default  NgoMainApp;
+export default  NgoMainAccept;
 

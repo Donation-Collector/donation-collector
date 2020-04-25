@@ -12,7 +12,9 @@ import ItemsApp from "./components/Pick-up-item-list/ItemsApp";
 import NgoMainApp from "./components/NGO-main/NGO-Main-App";
 import NgoAddress from "./components/NGO-Register/NGO-Address";
 import ResidentAddressApp from "./components/Resident-Address/Resident-Address-App";
-
+import NgoMainBody from "./components/NGO-main/NGO-Main-App";
+import NgoMainFinished from "./components/NGO-main/Ngo-Main-Finished";
+import NgoMainAccept from "./components/NGO-main/Ngo-Main-Accept";
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
@@ -27,6 +29,10 @@ ReactDOM.render(
         <Route path="/resident/items" component={ItemsApp}/>
         <Route path="ngomain" component={NgoMainApp}/>
         <Route path="/resident/address" component={ResidentAddressApp}/>
+            <Route path="/nMainBody" component={NgoMainBody}/>
+            <Route path="/nAccept" component={NgoMainAccept}/>
+            <Route path="/nFinished" component={NgoMainFinished}/>
+        <Route path="/nNgoMain" component={NgoMainBody}/>
     </Router>),
   document.getElementById('root')
 );
