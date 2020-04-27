@@ -189,7 +189,7 @@ class NgoMainApp extends React.Component {
         // };
         // const jsonobj = JSON.stringify(address);
   //  console.log(jsonobj);
-         fetch('http://localhost:8080/acceptRequest/$ngoid', {
+         fetch('http://localhost:8080/pendingRequest/$ngoid', {
  //       fetch('http://localhost:8080/demo/addAddress', {
             method: 'post',
             // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
