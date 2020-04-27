@@ -106,7 +106,6 @@ class NgoMainApp extends React.Component {
 
     render() {
         return (
-            <form classname={myform}>
             <div>
                 <TopBar/>
                 <section className="ngo-main-body">
@@ -151,8 +150,6 @@ class NgoMainApp extends React.Component {
 
                 <AboutUsMain/>
             </div>
-            </form>
-
         )
     }
 
