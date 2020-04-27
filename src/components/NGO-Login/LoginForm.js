@@ -22,10 +22,12 @@ class LoginForm extends Component {
                     </div>
                 </form>
                 <div className="login-button">
-                    <a className="login-button-itself btn btn-primary" href="/ngomain">Login</a>
+                    <a className="login-button-itself btn btn-primary" href=" ">
+                        Login
+                    </ a>
                 </div>
                 <div className="to-register">
-                    <a href="/nregister" className="to-register-itself">Not a member? Register here!</a>
+                    < a href="/nregister" className="to-register-itself">Not a member? Register here!</ a>
                 </div>
             </div>
         );

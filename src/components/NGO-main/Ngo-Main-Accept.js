@@ -143,10 +143,12 @@ class NgoMainAccept extends React.Component {
                 </section>
 
 
-                <div className= "NGO-submit"><button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"
+                <div className= "NGO-submit">
+                    <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"
                                                      autocomplete="off">
                     Submit
-                </button></div>
+                    </button>
+                </div>
                 <AboutUsMain/>
             </div>
         )
