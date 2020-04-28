@@ -100,6 +100,7 @@ class NgoMainAccept extends React.Component {
             ],
             type: 1 // 1 - all, 2 - done, 3 - not done
         }
+        this.handleSubmit =this.handleSubmit.bind(this);
     }
 
     render() {
@@ -179,9 +180,9 @@ handleSubmit () {
         var {id}=item;
         return {id};
     });
-    //const idlist = {id};
-    const jsonobj = JSON.stringify(idlist);
-    //      console.log(jsonobj);
+    // //const idlist = {id};
+     const jsonobj = JSON.stringify(idlist);
+          console.log(jsonobj);
 
     // var address = {
     //     "addressLine1": "test test",
@@ -190,10 +191,10 @@ handleSubmit () {
     //     "zipcode": "19702",
     //     "state": "NY"
     // };
-    // const jsonobj = JSON.stringify(address);
-    //  console.log(jsonobj);
-    fetch('http://localhost:8080/acceptRequest/$ngoid', {
-        //       fetch('http://localhost:8080/demo/addAddress', {
+    // const jsonobj1 = JSON.stringify(address);
+ //   //  console.log(jsonobj1);
+      fetch('http://localhost:8080/acceptedRequest/0', {
+ //             fetch('http://localhost:8080/demo/addAddress', {
         method: 'post',
         // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
         body: jsonobj,
@@ -217,8 +218,8 @@ handleSubmit () {
             }
         })
         .catch((err) => console.error(err));
-    }
-}
+     }
+ }
 
 ReactDOM.render(
     <NgoMainAccept/>,

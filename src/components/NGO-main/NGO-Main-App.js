@@ -101,6 +101,7 @@ class NgoMainApp extends React.Component {
             type: 1 // 1 - all, 2 - done, 3 - not done
         }
 
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -168,17 +169,17 @@ class NgoMainApp extends React.Component {
     }
 
 
-    handleSubmit () {
-
+    handleSubmit (e) {
+       // console.log(this);
         const List = this.state.todos.filter(item => item.done);
         //console.log(List);
         const idlist=List.map(function (item) {
             var {id}=item;
             return {id};
         });
-        //const idlist = {id};
+     //   console.log(idlist);
         const jsonobj = JSON.stringify(idlist);
-   //      console.log(jsonobj);
+         console.log(jsonobj);
 
         // var address = {
         //     "addressLine1": "test test",
@@ -189,7 +190,7 @@ class NgoMainApp extends React.Component {
         // };
         // const jsonobj = JSON.stringify(address);
   //  console.log(jsonobj);
-         fetch('http://localhost:8080/pendingRequest/$ngoid', {
+         fetch('http://localhost:8080/pendingRequest/0', {
  //       fetch('http://localhost:8080/demo/addAddress', {
             method: 'post',
             // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
