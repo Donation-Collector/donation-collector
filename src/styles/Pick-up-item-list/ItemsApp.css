@@ -27,3 +27,12 @@
     display: block;
     text-align: center;
 }
+
+.next-button {
+    text-align: center;
+}
+
+.description {
+    width: 100%;
+    text-align: center;
+}

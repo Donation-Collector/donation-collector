@@ -9,8 +9,7 @@ class DropOffApp extends Component {
         super();
         this.state= {
             zipcode: '',
-            dropoff: [{NGOname: "ngo1", email: "111@qq.com", phone: "12345678", address: "12345"},
-                {NGOname: "ngo1", email: "111@qq.com", phone: "12345678", address: "12345"}]
+            dropoff: []
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
