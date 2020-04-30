@@ -25,7 +25,9 @@ class LoginForm extends Component {
                         </div>
                         <input type="text" name="name" value={name}
                                onChange={this.changeHandler}
-                               placeholder="UserName"/>
+                               placeholder="UserName"
+                               required
+                        />
                     </div>
                     <div className="form">
                         <div>
@@ -33,15 +35,11 @@ class LoginForm extends Component {
                         </div>
                         <input type="password" name="password" value={password}
                                onChange={this.changeHandler}
-                               placeholder="Password"/>
+                               placeholder="Password"
+                               required
+                        />
                     </div>
                     <div className="login-button">
-                        {/*<a className="login-button-itself btn btn-primary" href=" ">*/}
-                        {/*    Login*/}
-                        {/*/!*</ a>*!/*/}
-                        {/*<button type="submit" className="login-button-itself btn btn-primary" onClick={this.handleSubmit}>*/}
-                        {/*    Login*/}
-                        {/*</button>*/}
                         <form onSubmit={this.handleSubmit}>
                             <button type='submit'>Login</button>
                         </form>
@@ -76,10 +74,17 @@ class LoginForm extends Component {
             .then((response) => response.text())
             .then((response) => {
                 console.log(response)
-                if (response === "true") {
-                    alert('login successfully')
+                // if (response === "true") {
+                //
+                //     window.location.href = "/ngomain"
+                // } else {
+                //     alert('no user found')
+                // }
+                if (response.length === 0) {
+                    alert('no user found')
                 } else {
-                    alert('no')
+                    console.log(response)
+                    window.location.href = "/ngomain"
                 }
             })
             .catch((err) => console.log(err))

@@ -15,6 +15,7 @@ import ResidentAddressApp from "./components/Resident-Address/Resident-Address-A
 import NgoMainBody from "./components/NGO-main/NGO-Main-App";
 import NgoMainFinished from "./components/NGO-main/Ngo-Main-Finished";
 import NgoMainAccept from "./components/NGO-main/Ngo-Main-Accept";
+
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
@@ -27,7 +28,7 @@ ReactDOM.render(
         <Route path="/naddress" component={NgoAddress}/>
         <Route path="/resident/drop" component={DropOffApp}/>
         <Route path="/resident/items" component={ItemsApp}/>
-        <Route path="ngomain" component={NgoMainApp}/>
+        <Route path="/ngomain" component={NgoMainApp}/>
         <Route path="/resident/address" component={ResidentAddressApp}/>
             <Route path="/nMainBody" component={NgoMainBody}/>
             <Route path="/nAccept" component={NgoMainAccept}/>
