@@ -50,7 +50,7 @@ class RegisterForm extends Component {
                         <div className="Box_title">
                             <span>Password</span>
                         </div>
-                        <input type="text" name="password"
+                        <input type="password" name="password"
                                value={password}
                                onChange={this.changeHandler}
                                className="input"/>

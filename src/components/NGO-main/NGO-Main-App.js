@@ -108,7 +108,7 @@ class NgoMainApp extends React.Component {
             type: 1 // 1 - all, 2 - done, 3 - not done
         }
 
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -158,54 +158,54 @@ class NgoMainApp extends React.Component {
 
     };
 
-    // handleSubmit (e) {
-    //     // console.log(this);
-    //     const List = this.state.todos.filter(item => item.done);
-    //     //console.log(List);
-    //     const idlist=List.map(function (item) {
-    //         var {id}=item;
-    //         return {id};
-    //     });
-    //     //   console.log(idlist);
-    //     const jsonobj = JSON.stringify(idlist);
-    //     console.log(jsonobj);
-    //
-    //     // var address = {
-    //     //     "addressLine1": "test test",
-    //     //     "addressLine2": "door 100",
-    //     //     "city": "New York City",
-    //     //     "zipcode": "19702",
-    //     //     "state": "NY"
-    //     // };
-    //     // const jsonobj = JSON.stringify(address);
-    //     //  console.log(jsonobj);
-    //
-    //     //         fetch('http://localhost:8080/pendingRequest/0', {
-    //     // //       fetch('http://localhost:8080/demo/addAddress', {
-    //     //            method: 'post',
-    //     //            // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
-    //     //            body: jsonobj,
-    //     //            headers: {
-    //     //                'Content-Type': 'application/json',
-    //     //                //'Accept': 'application/x-www-form-urlencoded',
-    //     //                'Access-Control-Allow-Origin':'*',
-    //     //                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
-    //     //            }
-    //     //        })
-    //     //            .then((res) => res.text())
-    //     //            .then((res) => {
-    //     //                // 当添加成功时，返回的json对象中应包含一个有效的id字段
-    //     //                // 所以可以使用res.id来判断添加是否成功
-    //     //                console.log(res);
-    //     //        //        if (res === "saved") {
-    //     //                if(res === "true") {
-    //     //                    alert('accept success');
-    //     //                } else {
-    //     //                    alert('accept failure');
-    //     //                }
-    //     //            })
-    //     //            .catch((err) => console.error(err));
-    // }
+    handleSubmit (e) {
+        // console.log(this);
+        const List = this.state.todos.filter(item => item.done);
+        //console.log(List);
+        const idlist=List.map(function (item) {
+            var {id}=item;
+            return {id};
+        });
+        //   console.log(idlist);
+        const jsonobj = JSON.stringify(idlist);
+        console.log(jsonobj);
+
+        // var address = {
+        //     "addressLine1": "test test",
+        //     "addressLine2": "door 100",
+        //     "city": "New York City",
+        //     "zipcode": "19702",
+        //     "state": "NY"
+        // };
+        // const jsonobj = JSON.stringify(address);
+        //  console.log(jsonobj);
+
+                fetch('http://localhost:8080/pendingRequest/0', {
+        //       fetch('http://localhost:8080/demo/addAddress', {
+                   method: 'post',
+                   // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
+                   body: jsonobj,
+                   headers: {
+                       'Content-Type': 'application/json',
+                       //'Accept': 'application/x-www-form-urlencoded',
+                       'Access-Control-Allow-Origin':'*',
+                       'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
+                   }
+               })
+                   .then((res) => res.text())
+                   .then((res) => {
+                       // 当添加成功时，返回的json对象中应包含一个有效的id字段
+                       // 所以可以使用res.id来判断添加是否成功
+                       console.log(res);
+               //        if (res === "saved") {
+                       if(res === "true") {
+                           alert('accept success');
+                       } else {
+                           alert('accept failure');
+                       }
+                   })
+                   .catch((err) => console.error(err));
+    }
 
     render() {
         return (
