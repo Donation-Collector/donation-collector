@@ -15,15 +15,28 @@ class TodoItem extends React.Component {
     render() {
         return (
             <div>
-
                 <span>Request id: {this.props.data.id}</span>
-                <p> </p>
-                <div>Email: {this.props.data.email}</div>
-                <p> </p>
-                <span>Notes: {this.props.data.notes}</span>
                 <p> </p>
                 <div>Date: {this.props.data.date}</div>
                 <p> </p>
+                <div>Email: {this.props.data.email}</div>
+                <p> </p>
+                <div>Description: {this.props.data.items.map(
+                    item =>{
+                        return <span>{item.type},{item.quantity} </span>
+
+                    }
+                )}</div>
+                <p></p>
+                <span>Notes: {this.props.data.notes}</span>
+                <p> </p>
+                <div>Address: {this.props.data.address.addressLine1},
+                    {this.props.data.address.addressLine2
+                    },{this.props.data.address.city},
+                    {this.props.data.address.zipcode},
+                    {this.props.data.address.state}
+                </div>
+                <br></br>
             </div>
         )
     }
@@ -94,7 +107,7 @@ class NgoMainFinished extends React.Component {
 
                     res.forEach(function(item) {
                         console.log(item);
-                        jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date});
+                        jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date, address: item.address, items: item.items});
                         console.log(jsonTarget);
                     });
                     this.setState(

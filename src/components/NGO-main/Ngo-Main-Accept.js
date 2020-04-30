@@ -22,24 +22,28 @@ class TodoItem extends React.Component {
                            this.props.updateHelper(this.props.data.id, !this.props.data.done)
                        } }
                 />
-
-                {/*<span>{this.props.data.title}</span>*/}
-                {/*<p> </p>*/}
-                {/*<div>Description: {this.props.data.desc}</div>*/}
-                {/*<p> </p>*/}
-                {/*<span>Address: {this.props.data.address}</span>*/}
-                {/*<p> </p>*/}
-                {/*<div>Date: {this.props.data.date}</div>*/}
                 <span>Request id: {this.props.data.id}</span>
-                <br/>
-                <div>Email: {this.props.data.email}</div>
-                <p> </p>
-                <span>Address: {this.props.data.address}</span>
-                <p> </p>
-                <span>Notes: {this.props.data.notes}</span>
                 <p> </p>
                 <div>Date: {this.props.data.date}</div>
                 <p> </p>
+                <div>Email: {this.props.data.email}</div>
+                <p> </p>
+                <div>Description: {this.props.data.items.map(
+                    item =>{
+                        return <span>{item.type},{item.quantity} </span>
+
+                    }
+                )}</div>
+                <p></p>
+                <span>Notes: {this.props.data.notes}</span>
+                <p> </p>
+                <div>Address: {this.props.data.address.addressLine1},
+                    {this.props.data.address.addressLine2
+                    },{this.props.data.address.city},
+                    {this.props.data.address.zipcode},
+                    {this.props.data.address.state}
+                </div>
+                <br></br>
             </div>
         )
     }
@@ -105,12 +109,12 @@ class NgoMainAccept extends React.Component {
         super();
         this.state = {
             todos: [
-                { id : 1, title : "Request1", desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-02-2020", address: "1000 1th Ave",done : false},
-                { id : 2, title : "Request2",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-03-2020",address: "1000 2th Ave", done : false},
-                { id : 3, title : "Request3",desc:" item lists:cloth: 5;book: 10;furniture(small):2",date :"01-04-2020", address: "1000 3th Ave",done : false},
-                { id : 4, title : "Request4",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-05-2020",address: "1000 4th Ave", done : false},
-                { id : 5, title : "Request5",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-06-2020", address: "1000 5th Ave",done : false},
-                { id : 6, title : "Request6",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-07-2020", address: "1000 6th Ave",done : false}
+                // { id : 1, title : "Request1", desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-02-2020", address: "1000 1th Ave",done : false},
+                // { id : 2, title : "Request2",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-03-2020",address: "1000 2th Ave", done : false},
+                // { id : 3, title : "Request3",desc:" item lists:cloth: 5;book: 10;furniture(small):2",date :"01-04-2020", address: "1000 3th Ave",done : false},
+                // { id : 4, title : "Request4",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-05-2020",address: "1000 4th Ave", done : false},
+                // { id : 5, title : "Request5",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-06-2020", address: "1000 5th Ave",done : false},
+                // { id : 6, title : "Request6",desc:" item lists:cloth: 5;book: 10;furniture(small):2", date :"01-07-2020", address: "1000 6th Ave",done : false}
             ],
             type: 1 // 1 - all, 2 - done, 3 - not done
         }
@@ -141,8 +145,8 @@ class NgoMainAccept extends React.Component {
 
                     res.forEach(function(item) {
                         console.log(item);
-                        jsonTarget.push({id: item.id, address: item.address.addressLine1 + item.address.addressLine2,
-                            email: item.email, notes: item.notes, date: item.date});
+                        jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date, address: item.address, items: item.items});
+
                         console.log(jsonTarget);
                     });
                     this.setState(
