@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Body from "./Body";
 import TopBar from "../starter-page/TopBar"
 import AboutUsMain from "../starter-page/About-us-main";
+import NGOInfo from "./NGOInfo";
 
 
 class DropOffApp extends Component {
@@ -9,9 +9,8 @@ class DropOffApp extends Component {
         super();
         this.state= {
             zipcode: '',
-            dropoff: [{NGOname: "ngo1", email:"123@qq.com", phone:"12345678", address:"123 road"},
-                {NGOname: "ngo1", email:"123@qq.com", phone:"12345678", address:"345 road"},
-                {NGOname: "ngo1", email:"123@qq.com", phone:"12345678", address:"345 road"}]
+            dropoff: [{NGOname: "ngo1", email: "111@qq.com", phone: "12345678", address: "12345"},
+                {NGOname: "ngo1", email: "111@qq.com", phone: "12345678", address: "12345"}]
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -89,7 +88,8 @@ class DropOffApp extends Component {
                                 // console.log(item);
                                 // jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date});
                                 jsonTarget.push({NGOname: item.name, email: item.email, phone: item.phoneNum,
-                                    address: item.address.addressLine1 + ',' + item.address.addressLine2 + ',' +item.address.city
+                                    address: item.address.addressLine1 + ',' + item.address.addressLine2 + ',' +item.address.city + ','
+                                        + item.address.zipcode
                                     });
                                  //console.log(jsonTarget);
                             });
@@ -123,7 +123,30 @@ class DropOffApp extends Component {
                         </button>
                     </div>
                 </div>
-                <Body showdropoff={this.state.dropoff}/>
+                <body className="body">
+                    <div className="div1">
+                    <table className="table1">
+                        <tr>
+                            <th>NGO</th>
+                            <th>email</th>
+                            <th>phone</th>
+                            <th>address</th>
+                        </tr>
+                    </table>
+                    </div>
+                    <div className="div2">
+                    <table className="table2">
+                        {this.state.dropoff.map(
+                            info => {
+                                return <NGOInfo
+                                    key = {info.address}
+                                    data = {info}
+                                />
+                            }
+                        )}
+                    </table>
+                    </div>
+                </body>
                 <AboutUsMain />
             </div>
         );
