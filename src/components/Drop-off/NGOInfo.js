@@ -6,7 +6,7 @@ class NgoInfo extends Component {
         const {data} = this.props;
         return (
             <tr>
-                <th>{data.id}</th>
+                <th>{data.NGOname}</th>
                 <th>{data.email}</th>
                 <th>{data.phone}</th>
                 <th>{data.address}</th>
