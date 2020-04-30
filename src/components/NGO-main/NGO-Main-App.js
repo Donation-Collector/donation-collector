@@ -3,6 +3,11 @@ import TopBar from "../starter-page/TopBar";
 import AboutUsMain from "../starter-page/About-us-main";
 import ReactDOM from 'react-dom';
 
+const id = localStorage.getItem("id")
+console.log(id)
+const url = 'http://localhost:8080/pendingRequest/' + id
+console.log(url)
+
 class TodoItem extends React.Component {
     constructor() {
         super();
@@ -28,6 +33,8 @@ class TodoItem extends React.Component {
                 <span>Request id: {this.props.data.id}</span>
                 <p> </p>
                 <div>Email: {this.props.data.email}</div>
+                <p> </p>
+                <span>Address: {this.props.data.address}</span>
                 <p> </p>
                 <span>Notes: {this.props.data.notes}</span>
                 <p> </p>
@@ -120,8 +127,8 @@ class NgoMainApp extends React.Component {
     getItem() {
         let jsonTarget = []
         let ids = "";
-        console.log(this.state.todos)
-        fetch('http://localhost:8080/pendingRequest/0', {
+        // console.log(this.state.todos)
+        fetch(url, {
             method: 'get',
             // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
             //  body: ,
@@ -134,16 +141,18 @@ class NgoMainApp extends React.Component {
             .then(res => res.json())
             .then(
                 (res) => {
-
+                    // console.log(localStorage.getItem("id"))
                     res.forEach(function(item) {
-                        console.log(item);
-                        jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date});
-                        console.log(jsonTarget);
+                        // console.log(item);
+                        // jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date});
+                        jsonTarget.push({id: item.id, address: item.address.addressLine1 + item.address.addressLine2,
+                            email: item.email, notes: item.notes, date: item.date});
+                        // console.log(jsonTarget);
                     });
                     this.setState(
                         {'todos': jsonTarget}
                     )
-                    console.log(this.state.todos);
+                    // console.log(this.state.todos);
 
                 },
                 (error) => {
@@ -168,7 +177,7 @@ class NgoMainApp extends React.Component {
         });
         //   console.log(idlist);
         const jsonobj = JSON.stringify(idlist);
-        console.log(jsonobj);
+        // console.log(jsonobj);
 
         // var address = {
         //     "addressLine1": "test test",
@@ -180,7 +189,7 @@ class NgoMainApp extends React.Component {
         // const jsonobj = JSON.stringify(address);
         //  console.log(jsonobj);
 
-                fetch('http://localhost:8080/pendingRequest/0', {
+                fetch(url, {
         //       fetch('http://localhost:8080/demo/addAddress', {
                    method: 'post',
                    // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串

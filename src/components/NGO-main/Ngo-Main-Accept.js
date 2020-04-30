@@ -3,6 +3,11 @@ import TopBar from "../starter-page/TopBar";
 import AboutUsMain from "../starter-page/About-us-main";
 import ReactDOM from 'react-dom';
 
+const id = localStorage.getItem("id")
+console.log(id)
+const url = 'http://localhost:8080/acceptedRequest/' + id
+console.log(url)
+
 class TodoItem extends React.Component {
     constructor() {
         super();
@@ -26,8 +31,10 @@ class TodoItem extends React.Component {
                 {/*<p> </p>*/}
                 {/*<div>Date: {this.props.data.date}</div>*/}
                 <span>Request id: {this.props.data.id}</span>
-                <p> </p>
+                <br/>
                 <div>Email: {this.props.data.email}</div>
+                <p> </p>
+                <span>Address: {this.props.data.address}</span>
                 <p> </p>
                 <span>Notes: {this.props.data.notes}</span>
                 <p> </p>
@@ -118,7 +125,7 @@ class NgoMainAccept extends React.Component {
         let jsonTarget = []
         let ids = "";
         console.log(this.state.todos)
-        fetch('http://localhost:8080/acceptedRequest/0', {
+        fetch(url, {
             method: 'get',
             // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
             //  body: ,
@@ -134,7 +141,8 @@ class NgoMainAccept extends React.Component {
 
                     res.forEach(function(item) {
                         console.log(item);
-                        jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date});
+                        jsonTarget.push({id: item.id, address: item.address.addressLine1 + item.address.addressLine2,
+                            email: item.email, notes: item.notes, date: item.date});
                         console.log(jsonTarget);
                     });
                     this.setState(
@@ -233,7 +241,7 @@ class NgoMainAccept extends React.Component {
         // };
         // const jsonobj1 = JSON.stringify(address);
         //   //  console.log(jsonobj1);
-        fetch('http://localhost:8080/acceptedRequest/0', {
+        fetch(url, {
             //             fetch('http://localhost:8080/demo/addAddress', {
             method: 'post',
             // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串

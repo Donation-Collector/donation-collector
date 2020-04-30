@@ -2,7 +2,10 @@ import TopBar from "../starter-page/TopBar";
 import React from "react";
 import AboutUsMain from "../starter-page/About-us-main";
 
-
+const id = localStorage.getItem("id")
+console.log(id)
+const url = 'http://localhost:8080/history/' + id
+console.log(url)
 
 class TodoItem extends React.Component {
     constructor() {
@@ -75,7 +78,7 @@ class NgoMainFinished extends React.Component {
     getItem() {
         let jsonTarget = []
         console.log(this.state.todos)
-        fetch('http://localhost:8080/history/0', {
+        fetch(url, {
             method: 'get',
             // 使用fetch提交的json数据需要使用JSON.stringify转换为字符串
             //  body: ,

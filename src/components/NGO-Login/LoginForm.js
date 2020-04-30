@@ -84,6 +84,8 @@ class LoginForm extends Component {
                     alert('no user found')
                 } else {
                     console.log(response)
+                    localStorage.setItem("id", response)
+                    alert("Yo Welcome!")
                     window.location.href = "/ngomain"
                 }
             })
