@@ -88,7 +88,7 @@ class DropOffApp extends Component {
                                 // jsonTarget.push({id: item.id, email: item.email, notes: item.notes, date: item.date});
                                 jsonTarget.push({NGOname: item.name, email: item.email, phone: item.phoneNum,
                                     address: item.address.addressLine1 + ',' + item.address.addressLine2 + ',' +item.address.city + ','
-                                        + item.address.zipcode
+                                        + item.address.zipcode, distance: item.distance
                                     });
                                  //console.log(jsonTarget);
                             });
@@ -123,18 +123,26 @@ class DropOffApp extends Component {
                     </div>
                 </div>
                 <body className="body">
-                    <div className="div1">
-                    <table className="table1">
-                        <tr>
+                    {/*<div className="div1">*/}
+                    {/*<table className="table1">*/}
+                    {/*    <tr>*/}
+                    {/*        <th>NGO</th>*/}
+                    {/*        <th>email</th>*/}
+                    {/*        <th>phone</th>*/}
+                    {/*        <th>address</th>*/}
+                    {/*        <th>distance</th>*/}
+                    {/*    </tr>*/}
+                    {/*</table>*/}
+                    {/*</div>*/}
+                    <div className="div2">
+                    <table className="table2">
+                        <tr className="title">
                             <th>NGO</th>
                             <th>email</th>
                             <th>phone</th>
                             <th>address</th>
+                            <th>distance(miles)</th>
                         </tr>
-                    </table>
-                    </div>
-                    <div className="div2">
-                    <table className="table2">
                         {this.state.dropoff.map(
                             info => {
                                 return <NGOInfo

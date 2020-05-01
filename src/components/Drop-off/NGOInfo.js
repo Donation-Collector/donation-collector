@@ -5,11 +5,12 @@ class NgoInfo extends Component {
     render() {
         const {data} = this.props;
         return (
-            <tr className="dropoff-info-table">
+            <tr id="ngoinfo">
                 <th>{data.NGOname}</th>
                 <th>{data.email}</th>
                 <th>{data.phone}</th>
                 <th>{data.address}</th>
+                <th>{data.distance}</th>
             </tr>
         );
     }

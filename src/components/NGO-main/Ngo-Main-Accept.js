@@ -14,6 +14,7 @@ class TodoItem extends React.Component {
     }
 
     render() {
+        const items = this.props.data.items
         return (
             <div>
                 <input type="checkbox"
@@ -28,7 +29,7 @@ class TodoItem extends React.Component {
                 <p> </p>
                 <div>Email: {this.props.data.email}</div>
                 <p> </p>
-                <div>Description: {this.props.data.items.map(
+                <div>Description: {items.map(
                     item =>{
                         return <span>{item.type},{item.quantity} </span>
 

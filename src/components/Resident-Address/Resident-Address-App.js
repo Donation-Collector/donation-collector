@@ -19,7 +19,10 @@ class ResidentAddressApp extends Component {
             //{ id: 0, goodName: 'Books', num: 0 , src: books, description: 'Books'},
             items.push({type: item.goodName, quantity: item.num, description: item.description});
         });
-        items[4].description = des
+        if (items[4].description === "")
+           items[4].description = "others";
+        else
+            items[4].description = des;
         // console.log(JSON.stringify(items))
 
         return (

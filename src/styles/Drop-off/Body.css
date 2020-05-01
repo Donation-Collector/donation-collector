@@ -26,11 +26,11 @@
 }
 
 .table2 {
-    text-align: center;
+    text-align: left;
     font-family: "Courier New";
     font-size: 12pt;
     width: 100%;
     color: black;
     border-spacing: 0px;
-    cellpadding: 10px;
+    cellpadding: 0px;
 }

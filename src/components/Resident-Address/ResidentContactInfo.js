@@ -17,7 +17,9 @@ class ResidentContactInfo extends Component {
             address : "",
             donationRequest: "",
             items: "",
-            ngo: ""
+            ngo: {
+                id : 3
+            }
         }
     }
 
@@ -29,6 +31,17 @@ class ResidentContactInfo extends Component {
     buttonClick = (e) => {
         e.preventDefault()
 
+        // date
+        const date = new Date().toLocaleDateString();
+        var d = date.split("/")
+        var month = d[0];
+        var day = d[1];
+        if (d[0].length < 2)
+            month = "0" + d[0]
+        if (d[1].length < 2)
+            day = "0" + d[1]
+        var datetime = d[2] + '-' + month + '-' + day
+        // console.log(d[2] + '-' + month + '-' + day)
         // get the address part
         this.request.address =
             {
@@ -43,9 +56,9 @@ class ResidentContactInfo extends Component {
         this.request.donationRequest =
             {
                 email: this.state.email,
-                notes: "get from google",
-                status: "not",
-                date: new Date().toLocaleDateString(),
+                notes: "To Someone Need!",
+                status: "",
+                date: datetime,
                 name: this.state.name,
                 tel: this.state.phone
             };
@@ -53,7 +66,30 @@ class ResidentContactInfo extends Component {
         // get the item part
         const items = this.props.data;
         this.request.items = items
-        console.log(JSON.stringify(this.request))
+        const body = JSON.stringify(this.request)
+        console.log(body)
+
+        fetch('http://localhost:8080/pickup', {
+            method: 'POST',
+            body: body,
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Accept': 'application/x-www-form-urlencoded',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
+            }
+        })
+            .then((response) => response.text())
+            .then((response) => {
+                if (response === 'success') {
+                    console.log(response)
+                    alert("Submit Success!")
+                }
+                else {
+                    alert("Submit failed")
+                }
+            })
+            .catch((err) => console.log(err))
     }
 
 

@@ -63,8 +63,11 @@ class NgoAddress extends Component {
         })
             .then((response) => response.text())
             .then((response) => {
-                if (response === 'true')
-                alert("Register Success!")
+                if (response === 'true') {
+                    alert("Register Success!")
+                } else {
+                    alert("Register Failed")
+                }
                 console.log(response)
             })
             .catch((err) => console.log(err))

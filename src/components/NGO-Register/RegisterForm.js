@@ -28,15 +28,15 @@ class RegisterForm extends Component {
                     <div className="title">
                         Register Form
                     </div>
-                    <div className="form">
-                        <div className="Box_title">
-                            <span>Image_Url</span>
-                        </div>
-                        <input type="text" name="image_url"
-                               value={image_url}
-                               onChange={this.changeHandler}
-                               className="input"/>
-                    </div>
+                    {/*<div className="form">*/}
+                    {/*    <div className="Box_title">*/}
+                    {/*        <span>Image_Url</span>*/}
+                    {/*    </div>*/}
+                    {/*    <input type="text" name="image_url"*/}
+                    {/*           value={image_url}*/}
+                    {/*           onChange={this.changeHandler}*/}
+                    {/*           className="input"/>*/}
+                    {/*</div>*/}
                     <div className="form">
                         <div className="Box_title">
                             <span>Name</span>
@@ -75,7 +75,7 @@ class RegisterForm extends Component {
                     </div>
                     <div className="form">
                         <div className="Box_title">
-                            <span>Cover Area</span>
+                            <span>Cover Area (miles)</span>
                         </div>
                         <input type="text" name="coverarea"
                                value={coverarea}
@@ -101,12 +101,14 @@ class RegisterForm extends Component {
                 {/*    <button href="/naddress" type="button" className="submit-button btn btn-secondary">Next</button>*/}
                 {/*    </form>*/}
                 {/*</div>*/}
-                <Link
-                    to={{
-                    pathname: '/naddress',
-                    state: this.state
-                }}>Next
-                </Link>
+                <div className="next-button">
+                    <Link className="link"
+                        to={{
+                        pathname: '/naddress',
+                        state: this.state
+                    }}>Next
+                    </Link>
+                </div>
                 <div className="to-login-body">
                     <a href="/nlogin" className="to-login-link">Already exist an account? Login Here!</a>
                 </div>

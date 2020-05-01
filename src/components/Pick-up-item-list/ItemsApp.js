@@ -13,11 +13,11 @@ class ItemsApp extends Component {
 
         this.state = {
             shopList: [
-                { id: 0, goodName: 'Books', num: 0 , src: books, description: 'books'},
-                { id: 1, goodName: 'Clothes',num: 0 , src:clothe, description: 'clothes'},
-                { id: 2, goodName: 'Furnitures',num: 0, src:furniture, description: 'furnitures'},
-                { id: 3, goodName: 'Toys',num: 0, src:toy, description: 'toys'},
-                { id: 4, goodName: 'Others',num: 0, src:misce, description: 'others'},
+                { id: 0, goodName: 'books', num: 0 , src: books, description: 'books'},
+                { id: 1, goodName: 'clothes',num: 0 , src:clothe, description: 'clothes'},
+                { id: 2, goodName: 'furnitures',num: 0, src:furniture, description: 'furnitures'},
+                { id: 3, goodName: 'toys',num: 0, src:toy, description: 'toys'},
+                { id: 4, goodName: 'others',num: 0, src:misce, description: 'others'},
             ],
             des: ""
         }
