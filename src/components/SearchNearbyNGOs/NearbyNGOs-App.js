@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TopBar from "../starter-page/TopBar";
 import AboutUsMain from "../starter-page/About-us-main";
 import NGOInfo from "../Drop-off/NGOInfo";
+import Link from "react-router/lib/Link";
 
 class NearbyNgOsApp extends Component {
     constructor() {
@@ -18,6 +19,10 @@ class NearbyNgOsApp extends Component {
         this.setState({
             zipcode: e.target.value
         })
+    }
+
+    optionSelect(e) {
+        localStorage.setItem("ngoName", e.target.value)
     }
 
     handleClick(e) {
@@ -63,6 +68,7 @@ class NearbyNgOsApp extends Component {
                 }
             )
     }
+
     render() {
         return (
             <div className="drop_off">
@@ -106,8 +112,28 @@ class NearbyNgOsApp extends Component {
                         )}
                     </table>
                 </div>
+                <div>
+                    Choose the Ngo you prefer
+                </div>
+                <div className="selectPart">
+                    <select onChange={this.optionSelect}>
+                        {this.state.dropoff.map(
+                            info => {
+                                return <option value={info.NGOname}>{info.NGOname}</option>
+                            }
+                        )}
+                    </select>
+                </div>
                 </body>
                 <a href="/resident/items" className="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Next</a>
+                {/*<div className="next-button">*/}
+                {/*    <Link className="btn btn-primary btn-lg btn-block"*/}
+                {/*          to={{*/}
+                {/*              pathname: '/resident/items',*/}
+                {/*              state: this.state*/}
+                {/*          }}>Next*/}
+                {/*    </Link>*/}
+                {/*</div>*/}
                 <AboutUsMain />
             </div>
         );

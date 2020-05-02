@@ -15,6 +15,7 @@
 @import 'styles/NGO-main/NGO-Main-App.css';
 @import 'styles/NGO-main/Ngo-main-body.css';
 @import 'styles/Drop-off/NGOInfo.css';
+@import 'styles/SearchNearbyNGOs/NearbyNGOs-App.css';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
