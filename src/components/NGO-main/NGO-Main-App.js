@@ -44,7 +44,7 @@ class TodoItem extends React.Component {
                     {this.props.data.address.zipcode},
                     {this.props.data.address.state}
                 </div>
-                <br></br>
+                <hr></hr>
 
             </div>
         )

@@ -17,9 +17,7 @@ class ResidentContactInfo extends Component {
             address : "",
             donationRequest: "",
             items: "",
-            ngo: {
-                id : 3
-            }
+            ngoName:"Environmental Defense Fund"
         }
     }
 
