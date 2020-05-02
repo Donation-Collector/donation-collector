@@ -6,21 +6,25 @@
 
 .starter-resident-button {
     background-color: dodgerblue;
-    height: 50px;
+    height: 43px;
     width: 150px;
-    margin-left: 130px;
     font-weight: bold;
-    color: crimson !important;
+    color: white !important;
     cursor: pointer;
+    margin-right: 360px;
 }
 
 .starter-ngo-button{
-    float: right;
-    height: 50px;
+    background-color: dodgerblue;
+    height: 43px;
     width: 150px;
-    margin-right: 130px;
     font-weight: bold;
-    color: crimson !important;
+    color: white !important;
     cursor: pointer;
 
+}
+.home-button-container {
+    margin-top: 200px;
+    text-align: center;
+    align-items: center;
 }
